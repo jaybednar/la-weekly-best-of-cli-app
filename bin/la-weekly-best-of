@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "la_weekly_best_of"
+
+LaWeeklyBestOf::CLI.new.call 

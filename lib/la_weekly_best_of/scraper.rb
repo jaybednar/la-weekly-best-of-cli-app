@@ -1,0 +1,4 @@
+class LaWeeklyBestOf::Scraper 
+
+
+end 

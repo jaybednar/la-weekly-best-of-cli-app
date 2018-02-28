@@ -1,0 +1,4 @@
+class LaWeeklyBestOf::Category 
+
+
+end 
