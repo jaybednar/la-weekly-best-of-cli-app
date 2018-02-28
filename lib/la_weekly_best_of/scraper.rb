@@ -33,9 +33,27 @@ class LaWeeklyBestOf::Scraper
 			neighborhoods << n_hash
 		end 
 		neighborhoods
-	end 	
+		
+		
+	end 
 
-	def self.scrape_neighborhood_page
+	def self.scrape_neighborhood_page(neighborhood_url)
+		#return a new hash for each winner which i will use to instantiate each winner 
+		#category = doc.search("div.bestof span.ca a").first.text
+		#sub_category = doc.search("section.award").first.attr("data-soctitle").value.split(":").first
+		#name (name of business) = doc.search("section.award").first.attr("data-soctitle").value.split(":").last
+		#address = doc.search("div.address").first.text.strip.split("\n").first
+		#phone (if has one) = doc.search("div.phone").first.text
+		#url (if there is one)  =  doc.search("div.url a")[1].attr("href")
+		#description = doc.search("div.description p").first.text
+		#description author = doc.search("div.byline a").first.text
 
+		
+		self.scrape_best_of.each do |neighborhood|
+			puts neighborhood[:url]
+		end 
+
+		doc = Nokogiri::HTML(open("http://www.laweekly.com/best-of/2017/neighborhoods?n[]=San%20Fernando%20Valley"))
+		
 	end 
 end 
