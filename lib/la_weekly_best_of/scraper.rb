@@ -2,8 +2,8 @@ class LaWeeklyBestOf::Scraper
 	attr_accessor :url
 
 
-	def self.scrape_neighborhoods
-		#scrapes la weekly and returns an array of hashes containing the overal neighborhood info 
+	def self.scrape_best_of
+		#scrapes la weekly and returns an array of hashes containing the overall neighborhood info 
 
 		doc = Nokogiri::HTML(open("http://www.laweekly.com/best-of"))
 
@@ -34,4 +34,8 @@ class LaWeeklyBestOf::Scraper
 		end 
 		neighborhoods
 	end 	
+
+	def self.scrape_neighborhood_page
+
+	end 
 end 
