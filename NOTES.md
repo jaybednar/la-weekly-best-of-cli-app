@@ -59,3 +59,8 @@ What is a Category?
 require_relative "./daily_deal/cli")
 	4) now, with working bin file (puts out statement in cli controller to check, begin discovering objects (build fake methods, etc in cli controller 
 
+
+switch to main directory for la-weekly-best-of 
+git add README.md
+git commit -m "message"
+git push -u origin master
