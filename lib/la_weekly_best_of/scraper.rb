@@ -4,7 +4,7 @@ class LaWeeklyBestOf::Scraper
 
 	def self.scrape_neighborhoods
 		#scrapes la weekly and returns an array of hashes containing the overal neighborhood info 
-		
+
 		doc = Nokogiri::HTML(open("http://www.laweekly.com/best-of"))
 
 		neighborhoods = []
@@ -33,6 +33,5 @@ class LaWeeklyBestOf::Scraper
 			neighborhoods << n_hash
 		end 
 		neighborhoods
-		binding.pry
 	end 	
 end 
