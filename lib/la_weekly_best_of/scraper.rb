@@ -32,37 +32,32 @@ class LaWeeklyBestOf::Scraper
 			end 
 			neighborhoods << n_hash
 		end 
-		neighborhoods.each do 
+		neighborhoods 
 		# binding.pry
 		
 	end 
 
 	def self.scrape_neighborhood_page
 		#return an array of hashes for each winner which i will use to instantiate each winner 
-
 		winners_by_neighborhood = [] 
-		self.scrape_best_of.each do |neighborhood|  #neighborhood here is each URL (essentially)
+
+		self.scrape_best_of.each do |neighborhood| 
+			
 			doc = Nokogiri::HTML(open(neighborhood[:url])).search("section.award")
 			
 			doc.each do |winner| 
-				# binding.pry
 				winner_hash = Hash.new 
 				winner_hash[:category] = winner.search("span.ca a").text
 				winner_hash[:sub_category] = winner.attr("data-soctitle").split(":").first.strip
 				winner_hash[:name] = winner.attr("data-soctitle").split(":").last.strip
 				winner_hash[:address] = winner.search("div.address").text.strip.split("\n").first
-				# winners_hash[:phone] (if has one) = doc.search("div.phone").first.text
-				# winners_hash[:url] (if there is one)  =  doc.search("div.url a")[1].attr("href")
 				winner_hash[:description] = winner.search("div.description p").text.strip
 				winner_hash[:description_author] = winner.css("div.byline a").text.strip
 				winner_hash[:neighborhood] = neighborhood[:name]
 				winners_by_neighborhood << winner_hash
 			end 
 		end 
-
 		winners_by_neighborhood
-		# binding.pry
-		
 	end 
 
 
