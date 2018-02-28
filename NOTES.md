@@ -33,6 +33,10 @@ o	What is a Neighborhood?
 
 What is a Winner? 
 "	Has a NAME 
+	Has a LOCATION (address) 
+	Has a URL 
+	Has a PHONE
+	Has a DESCRIPTION
 "	Belongs to a NEIGHBORHOOD
 "	Belongs to a CATEGORY 
 

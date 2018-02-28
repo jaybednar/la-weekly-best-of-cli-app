@@ -15,7 +15,7 @@ class LaWeeklyBestOf::Winner
 	end 
 
 	def create_from_collection(neighborhoods_array)
-		neighborhoods_array = Scraper.scrape_best_of
+		neighborhoods_array = Scraper.scrape_neighborhood_page 
 		neighborhoods_array.each do |neighborhood|
 			LaWeeklyBestOf::Winner.new(neighborhood)
 		end 

@@ -2,8 +2,7 @@ class LaWeeklyBestOf::CLI
 
 	def call 
 
-		LaWeeklyBestOf::Scraper.scrape_neighborhood_page 
-
+		LaWeeklyBestOf::Scraper.scrape_neighborhood_page
 		# puts %{Please choose an option: 
 		# 		'1' to view by Neighborhood
 		# 			Choose a neighborhood:
