@@ -46,10 +46,11 @@ class LaWeeklyBestOf::Scraper
 			doc = Nokogiri::HTML(open(neighborhood[:url])).search("section.award")
 			
 			doc.each do |winner| 
+				# binding.pryadd
 				winner_hash = Hash.new 
 				winner_hash[:category] = winner.search("span.ca a").text
 				winner_hash[:sub_category] = winner.attr("data-soctitle").split(":").first.strip
-				winner_hash[:name] = winner.attr("data-soctitle").split(":").last.strip
+				winner_hash[:name] = winner.search("div.winner a").text
 				winner_hash[:address] = winner.search("div.address").text.strip.split("\n").first
 				winner_hash[:description] = winner.search("div.description p").text.strip
 				winner_hash[:description_author] = winner.css("div.byline a").text.strip

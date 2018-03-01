@@ -1,5 +1,5 @@
 class LaWeeklyBestOf::Winner 
-	attr_accessor :name, :neighborhood, :category, :url, :address, :phone, :description 
+	attr_accessor :category, :sub_category, :name, :address, :description, :description_author, :neighborhood
 
 	@@all = [] 
 
@@ -14,11 +14,16 @@ class LaWeeklyBestOf::Winner
 		@@all << self 
 	end 
 
-	def create_from_collection(neighborhoods_array)
-		neighborhoods_array = Scraper.scrape_neighborhood_page 
+	def self.create_from_collection(neighborhoods_array)
+		# neighborhoods_array = Scraper.scrape_neighborhood_page
 		neighborhoods_array.each do |neighborhood|
 			LaWeeklyBestOf::Winner.new(neighborhood)
 		end 
 	end 
 
+	def self.find_by_name(name)
+		self.all.detect do |winner_hash|
+			winner_hash.name == name 
+		end 
+	end 
 end 

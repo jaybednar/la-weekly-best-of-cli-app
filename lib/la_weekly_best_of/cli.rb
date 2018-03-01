@@ -3,6 +3,11 @@ class LaWeeklyBestOf::CLI
 	def call 
 
 		LaWeeklyBestOf::Scraper.scrape_neighborhood_page
+
+		LaWeeklyBestOf::Winner.create_from_collection(LaWeeklyBestOf::Scraper.scrape_neighborhood_page)
+		binding.pry
+		LaWeeklyBestOf::Winner.all 
+
 		# puts %{Please choose an option: 
 		# 		'1' to view by Neighborhood
 		# 			Choose a neighborhood:
