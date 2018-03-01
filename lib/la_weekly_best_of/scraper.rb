@@ -1,4 +1,4 @@
-class LaWeeklyBestOf::Scraper 
+class Scraper 
 	attr_accessor :url
 
 
@@ -61,6 +61,15 @@ class LaWeeklyBestOf::Scraper
 		winners_by_neighborhood
 	end 
 
+
+	# neighborhoods = [{
+		# 	:CENTRAL = {}, 
+		# 	:NORTHEAST = {},
+		# 	:EAST = {},
+		# 	:SOUTH = {},
+		# 	:WEST = {},
+		# 	"San Fernando Valley" => {}
+		# 	}]
 
 
 end 

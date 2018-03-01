@@ -1,4 +1,4 @@
-class LaWeeklyBestOf::Winner 
+class Winner 
 	attr_accessor :category, :sub_category, :name, :address, :description, :description_author, :neighborhood
 
 	@@all = [] 
@@ -17,7 +17,7 @@ class LaWeeklyBestOf::Winner
 	def self.create_from_collection(neighborhoods_array)
 		# neighborhoods_array = Scraper.scrape_neighborhood_page
 		neighborhoods_array.each do |neighborhood|
-			LaWeeklyBestOf::Winner.new(neighborhood)
+			self.new(neighborhood)
 		end 
 	end 
 

@@ -1,4 +1,4 @@
-class LaWeeklyBestOf::Neighborhood
+class Neighborhood
 	attr_accessor :name, :winners 
 
 	@@all =[] 
